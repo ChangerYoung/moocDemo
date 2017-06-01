@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssdut.demo.dao.courseselectMapper">
+  <resultMap id="BaseResultMap" type="com.ssdut.demo.pojo.courseselect">
+    <id column="UserId" jdbcType="INTEGER" property="userid" />
+    <id column="CourseId" jdbcType="INTEGER" property="courseid" />
+    <result column="ClassId" jdbcType="INTEGER" property="classid" />
+    <result column="Schedule" jdbcType="INTEGER" property="schedule" />
+    <result column="Mark1" jdbcType="INTEGER" property="mark1" />
+    <result column="Mark2" jdbcType="INTEGER" property="mark2" />
+    <result column="Mark3" jdbcType="INTEGER" property="mark3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    UserId, CourseId, ClassId, Schedule, Mark1, Mark2, Mark3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.ssdut.demo.pojo.courseselectKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from courseselect
+    where UserId = #{userid,jdbcType=INTEGER}
+      and CourseId = #{courseid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.ssdut.demo.pojo.courseselectKey">
+    delete from courseselect
+    where UserId = #{userid,jdbcType=INTEGER}
+      and CourseId = #{courseid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssdut.demo.pojo.courseselect">
+    insert into courseselect (UserId, CourseId, ClassId, 
+      Schedule, Mark1, Mark2, 
+      Mark3)
+    values (#{userid,jdbcType=INTEGER}, #{courseid,jdbcType=INTEGER}, #{classid,jdbcType=INTEGER}, 
+      #{schedule,jdbcType=INTEGER}, #{mark1,jdbcType=INTEGER}, #{mark2,jdbcType=INTEGER}, 
+      #{mark3,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssdut.demo.pojo.courseselect">
+    insert into courseselect
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        UserId,
+      </if>
+      <if test="courseid != null">
+        CourseId,
+      </if>
+      <if test="classid != null">
+        ClassId,
+      </if>
+      <if test="schedule != null">
+        Schedule,
+      </if>
+      <if test="mark1 != null">
+        Mark1,
+      </if>
+      <if test="mark2 != null">
+        Mark2,
+      </if>
+      <if test="mark3 != null">
+        Mark3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="courseid != null">
+        #{courseid,jdbcType=INTEGER},
+      </if>
+      <if test="classid != null">
+        #{classid,jdbcType=INTEGER},
+      </if>
+      <if test="schedule != null">
+        #{schedule,jdbcType=INTEGER},
+      </if>
+      <if test="mark1 != null">
+        #{mark1,jdbcType=INTEGER},
+      </if>
+      <if test="mark2 != null">
+        #{mark2,jdbcType=INTEGER},
+      </if>
+      <if test="mark3 != null">
+        #{mark3,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssdut.demo.pojo.courseselect">
+    update courseselect
+    <set>
+      <if test="classid != null">
+        ClassId = #{classid,jdbcType=INTEGER},
+      </if>
+      <if test="schedule != null">
+        Schedule = #{schedule,jdbcType=INTEGER},
+      </if>
+      <if test="mark1 != null">
+        Mark1 = #{mark1,jdbcType=INTEGER},
+      </if>
+      <if test="mark2 != null">
+        Mark2 = #{mark2,jdbcType=INTEGER},
+      </if>
+      <if test="mark3 != null">
+        Mark3 = #{mark3,jdbcType=INTEGER},
+      </if>
+    </set>
+    where UserId = #{userid,jdbcType=INTEGER}
+      and CourseId = #{courseid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssdut.demo.pojo.courseselect">
+    update courseselect
+    set ClassId = #{classid,jdbcType=INTEGER},
+      Schedule = #{schedule,jdbcType=INTEGER},
+      Mark1 = #{mark1,jdbcType=INTEGER},
+      Mark2 = #{mark2,jdbcType=INTEGER},
+      Mark3 = #{mark3,jdbcType=INTEGER}
+    where UserId = #{userid,jdbcType=INTEGER}
+      and CourseId = #{courseid,jdbcType=INTEGER}
+  </update>
+</mapper>

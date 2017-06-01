@@ -1,0 +1,223 @@
+@charset 'utf-8';
+/*浏览按钮*/
+.btn-liulan{
+	height:30px;
+	padding:0 8px;
+	font-size: 12px;
+}
+.tbanner{
+	width:100%;
+	height:150px;
+	background:url('../images/t-banner.jpg') right center;
+}
+
+.tclass{
+	width:100%;
+	float: left;	
+}
+.tclass-content{
+	width:100%;
+	float: left;
+	padding:20px 0;
+}
+.tclass  .tclass-content > ul.nav-pills{
+	border-bottom: 1px solid #E0E0E0;
+}
+.tclass  .tclass-content > ul.nav-pills > li >a{
+	height:45px;
+	line-height: 45px;
+	margin:0;
+	padding:0;
+	border-radius: 0;
+	background: transparent !important;
+	color:#333;
+	font-size: 16px;
+	padding:0 40px;
+}
+.tclass  .tclass-content > ul.nav-pills  li.active >a{
+	color:#43B413;
+	border-bottom:1px solid #43B413;
+}
+.tclass  .tclass-content  > .tab-content{
+	width:100%;
+	float: left;
+	padding:20px 0;
+}
+.tclass-line{
+	width:1200px;
+	float: left;
+	height:120px;
+	padding:10px;
+	border-bottom: 1px solid #E0E0E0;
+}
+.tclass-line > .left{
+	width:180px;
+	float: left;
+	overflow: hidden;
+}
+.tclass-line > .right{
+  width:100px;
+  height:100px;
+  float: right;
+  position: relative;
+}
+.tclass-line > .right > .btn-click{
+	width:30px;
+	height:30px;
+	float: right;
+	border:0;
+	background: #43B413;
+	border-radius: 50%;
+	text-align: center;
+}
+.tclass-line > .right > .btn-click > i{
+	color: #fff;
+	margin-left: 5px;
+}
+
+/*隐藏的部分*/
+.tclass-line > .right > div.hide-field{
+	width:300px;
+	height:60px;
+	top:35px;
+	right:0;
+	position: absolute;
+	background: #E6F7DF;
+	display: none;
+}
+.tclass-line > .right > div.active{
+	display: block !important;
+}
+.tclass-line > .right > div.hide-field a.link-1{
+   line-height: 60px;
+   height:60px;
+   display: block;
+   float: left;
+   width:100px;
+   text-align: center;
+}
+.tclass-line > .right > div.hide-field img{
+	max-height:30px;
+	max-width: 30px;
+	border-radius: 50px;
+	margin:15px 10px;
+	float: left;
+}
+.tclass-line > .right > div.hide-field a.add-concern{
+	width:60px;
+	float: right;
+	line-height: 60px;
+	height:60px;
+}
+.tclass-line > .right > div p{
+   line-height: 60px;
+   margin:0 60px 0 50px;
+}
+
+
+.tclass-line > .middle{
+	margin:0 100px 0 180px;
+	padding:0 10px;
+	height:100px;
+}
+.tclass-line > .left > a > img{
+	max-height: 100px;
+}
+.tclass-line > .middle > h4{
+	height:30px;
+	line-height: 30px;
+}
+.tclass-line > .middle > div{
+	margin:5px 0;
+	padding-left: 10px;
+	height:40px;
+	overflow: hidden;
+}
+.tclass-line > .middle > p{
+	line-height: 30px;
+	padding-left: 10px;
+}
+.tclass-line > .middle > p > span{
+	color:#666;
+	font-size:10px;
+	margin-right: 10px;
+}
+
+/*创建课程*/
+
+.step{
+	width:1000px;
+	margin:0 100px;
+	float: left;
+	overflow-x: hidden;
+}
+.step .top{
+	width:100%;
+	float: left;
+	height:45px;
+}
+.step-bg1{
+	background: url('../images/step1-bg.jpg') left center no-repeat;
+}
+.step-bg2{
+	background: url('../images/step2-bg.jpg') left center no-repeat;
+}
+.step-bg3{
+	background: url('../images/step3-bg.jpg') left center no-repeat;
+
+}
+.step .content{
+	float: left;
+	width:100%;
+}
+.form-step1{
+	width:800px;
+	margin:20px 100px;
+}
+
+.step .content h4{
+	height: 40px;
+	line-height: 40px;
+	width:100%;
+	margin:10px 0;
+	border-bottom: 1px solid #21A900;
+}
+
+.line{
+	width:100%;
+	margin: 10px 0;
+}
+.line > span{
+	width:100px;
+	height:30px;
+	float: left;
+	color:#333;
+	margin-right: 30px;
+	line-height: 30px;
+	text-align: right;
+}
+.line input[type='text'],.line select{
+	width:600px;
+	height:30px;
+	padding:3px 5px;
+	font-size: 12px;
+}
+.line input[type='text']:focus,.line select:focus,.line textarea:focus{
+    outline: none;
+    border:1px solid #21A900;
+}
+.line textarea{
+	width:600px;
+	resize:none;
+}
+/*更改.c-chapter-list li a的样式*/
+
+.c-chapter-list li a.delete-c,.c-chapter-list li a.edit-c{
+	width:30px;
+	height:40px;
+	float: right;
+	display: inline-block;
+}
+.c-chapter-list li a.main-c-link{
+	margin-right: 60px;
+}

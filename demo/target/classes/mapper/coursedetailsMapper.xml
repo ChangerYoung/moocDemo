@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssdut.demo.dao.coursedetailsMapper">
+  <resultMap id="BaseResultMap" type="com.ssdut.demo.pojo.coursedetails">
+    <id column="CourseId" jdbcType="INTEGER" property="courseid" />
+    <id column="ClassId" jdbcType="INTEGER" property="classid" />
+    <result column="Homework" jdbcType="VARCHAR" property="homework" />
+    <result column="VideoURL" jdbcType="VARCHAR" property="videourl" />
+    <result column="PPTURL" jdbcType="VARCHAR" property="ppturl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    CourseId, ClassId, Homework, VideoURL, PPTURL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from coursedetails
+    where ClassId = #{classid,jdbcType=INTEGER}
+  </select>
+  <select id="selectByCourseId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from coursedetails
+    where CourseId = #{courseid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from coursedetails
+    where ClassId = #{classid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssdut.demo.pojo.coursedetails">
+    insert into coursedetails (CourseId, ClassId, Homework, 
+      VideoURL, PPTURL)
+    values (#{courseid,jdbcType=INTEGER}, #{classid,jdbcType=INTEGER}, #{homework,jdbcType=VARCHAR}, 
+      #{videourl,jdbcType=VARCHAR}, #{ppturl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssdut.demo.pojo.coursedetails">
+    insert into coursedetails
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="courseid != null">
+        CourseId,
+      </if>
+      <if test="classid != null">
+        ClassId,
+      </if>
+      <if test="homework != null">
+        Homework,
+      </if>
+      <if test="videourl != null">
+        VideoURL,
+      </if>
+      <if test="ppturl != null">
+        PPTURL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="courseid != null">
+        #{courseid,jdbcType=INTEGER},
+      </if>
+      <if test="classid != null">
+        #{classid,jdbcType=INTEGER},
+      </if>
+      <if test="homework != null">
+        #{homework,jdbcType=VARCHAR},
+      </if>
+      <if test="videourl != null">
+        #{videourl,jdbcType=VARCHAR},
+      </if>
+      <if test="ppturl != null">
+        #{ppturl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssdut.demo.pojo.coursedetails">
+    update coursedetails
+    <set>
+      <if test="homework != null">
+        Homework = #{homework,jdbcType=VARCHAR},
+      </if>
+      <if test="videourl != null">
+        VideoURL = #{videourl,jdbcType=VARCHAR},
+      </if>
+      <if test="ppturl != null">
+        PPTURL = #{ppturl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CourseId = #{courseid,jdbcType=INTEGER}
+      and ClassId = #{classid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssdut.demo.pojo.coursedetails">
+    update coursedetails
+    set Homework = #{homework,jdbcType=VARCHAR},
+      VideoURL = #{videourl,jdbcType=VARCHAR},
+      PPTURL = #{ppturl,jdbcType=VARCHAR}
+    where CourseId = #{courseid,jdbcType=INTEGER}
+      and ClassId = #{classid,jdbcType=INTEGER}
+  </update>
+</mapper>

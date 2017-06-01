@@ -1,0 +1,244 @@
+@charset 'utf-8';
+.m-header{
+  width:100%;
+  height:50px;
+  line-height: 50px;
+  box-shadow: 0 2px 2px #ccc;
+  background: #fff;
+  float: left;
+  position: fixed;
+  top:0;
+  left:0;
+}
+.logo-field{
+	width:220px;
+	height:50px;
+	float: left;
+}
+.logo-field > a > img{
+	max-height: 40px;
+	margin:5px 20px;
+}
+.m-header ul{
+	width:300px;
+	float: right;
+}
+.m-header ul > li > a{
+	display: block;
+	height:50px;
+	line-height: 50px;
+	padding:0 20px;
+	float: right;
+	color:#666;
+}
+.m-header ul > li > a:hover{
+	background: #E6F7DF;
+	color:#89C86F;
+}
+.m-header ul > li > a:hover > i{
+	color:#89C86F;
+}
+
+/*侧边导航*/
+.m-sidebar{
+	width:220px;
+	height:100%;
+	float: left;
+	position: fixed;
+	background: #D7E9F7;
+}
+.m-sidebar > ul{
+	width:220px;
+}
+.m-sidebar > ul > li > a{
+	width: 100%;
+	height:50px;
+	line-height: 50px;
+	float: left;
+	padding:0 30px;
+	color:#333;
+	box-shadow:0 1px 1px #f0f0f0;
+}
+.m-sidebar > ul > li > a:hover{
+	background: #03A9F4;
+	color:#fff;
+}
+.m-sidebar > ul > li > a:hover > i{
+	color:#fff;
+}
+.m-sidebar > ul > li > a > i{
+    margin-right: 10px;
+}
+/*内容*/
+.m-content{
+	height:100%;
+    margin-top: 52px;
+	margin-left: 220px;
+}
+.m-content > ol.breadcrumb{
+	background: #EEEEEE;
+	height:50px;
+	line-height: 50px;
+	border-radius: 0;
+	margin:0;
+	padding:0;
+	padding-left: 10px;
+	border-bottom: 1px solid #D9D9D9;
+}
+.m-content .control-bar{
+	height:50px;
+	width: 100%;
+	float: left;
+	line-height: 50px;
+	background: #E6F7DF;
+	border-bottom: 1px solid #E6F7DF;
+}
+.control-bar p{
+    padding-left:20px;
+	font-size: 16px;
+}
+.control-bar span{
+	height:50px;
+	padding-left:20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.control-bar > form,.control-bar .btn-group{
+	float: right;
+}
+.control-bar .btn-group{
+	margin:8px 10px;
+}
+.control-bar .btn-group i{
+	color:#337AB7;
+}
+/*讲师列表的三个隐藏页 暂时不用*/
+.content-hide{
+    float: left;
+    display: none;
+}
+
+/*排序规则结果*/
+.con-bar-result{
+   height:40px;
+   float: left;
+   width:100%;
+   line-height: 40px;
+   background: #EEEEEE;
+   padding-left: 10px;
+   border-top: 1px solid #D9D9D9;
+   border-bottom: 1px solid #D9D9D9;
+}
+.con-bar-result .btn-group{
+	margin:8px 5px;
+	float: right;
+}
+.m-content table.table label{
+   font-weight: 400;
+   margin-bottom:0;
+}
+
+ul.class-sort{
+	width:1020px;
+	margin:20px auto;
+	line-height: 40px;
+}
+ul.class-sort li > a{
+	border:1px #DDDDDD dashed !important;
+	width: 150px;
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+    float: left;
+    color: #333;
+    margin:10px;
+}
+ul.class-sort li > a:hover{
+	background: #E6F7DF;
+	color:#89C86F;
+}
+
+
+/*用户详情页的部分*/
+.m-content-field{
+	padding:20px;
+	width: 100%;
+	float: left;
+}
+.m-content-field ul.nav-pills{
+	/* width:880px; */
+	width: 100%;
+	border-bottom:1px solid #E6F7DF;
+}
+.m-content-field ul.nav-pills > li,ul.nav-pills > li.active{
+	background: transparent !important;
+}
+.m-content-field ul.nav-pills > li >a{
+	height:45px;
+	line-height: 45px;
+	margin:0;
+	padding:0;
+	border-radius: 0;
+	color:#333;
+	font-size: 14px;
+	padding:0 20px;
+	background: transparent !important;
+}
+.m-content-field ul.nav-pills li.active >a{
+	/*background: #43B413 !important;*/
+	background: transparent;
+	color:#43B413;
+	border-bottom:1px solid #43B413;
+}
+
+/*个人介绍*/
+.tab-content .intro{
+	margin-top: 20px;
+}
+.tab-content .intro > .left{
+	width:120px;
+	float: left;
+}
+.tab-content .intro > .left > img{
+   max-width: 100px;
+   max-height: 100px;
+   border-radius:50%;
+   margin-right: 20px;
+}
+.tab-content .intro > .right{
+	margin-left: 120px;
+	padding:10px;
+}
+.tab-content .intro > .right > h3,.tab-content .intro > .right > p{
+	margin:0;
+	height:40px;
+	line-height: 40px;
+}
+.tab-content .intro > .right > .intro-p{
+	border-top:1px solid #eee;
+	color:#666;
+	line-height: 30px;
+	text-indent: 20px;
+
+}
+
+/*课程介绍*/
+.m-class-intro{
+	padding:10px;
+	border-bottom: 1px solid #eee;
+}
+.m-class-intro > h3,.m-class-chap > h3{
+	line-height: 40px;
+	margin:0;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	height:40px;
+}
+.m-class-intro > p{
+	line-height: 30px;
+	text-indent: 20px;
+}
+.m-class-chap{
+	padding:10px;
+}

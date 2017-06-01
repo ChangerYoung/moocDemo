@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssdut.demo.dao.messageMapper">
+  <resultMap id="BaseResultMap" type="com.ssdut.demo.pojo.message">
+    <id column="MessageId" jdbcType="INTEGER" property="messageid" />
+    <result column="FromId" jdbcType="INTEGER" property="fromid" />
+    <result column="ToId" jdbcType="INTEGER" property="toid" />
+    <result column="time" jdbcType="INTEGER" property="time" />
+    <result column="Column_5" jdbcType="TIMESTAMP" property="column5" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MessageId, FromId, ToId, time, Column_5
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssdut.demo.pojo.message">
+    insert into message (MessageId, FromId, ToId, 
+      time, Column_5)
+    values (#{messageid,jdbcType=INTEGER}, #{fromid,jdbcType=INTEGER}, #{toid,jdbcType=INTEGER}, 
+      #{time,jdbcType=INTEGER}, #{column5,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssdut.demo.pojo.message">
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="messageid != null">
+        MessageId,
+      </if>
+      <if test="fromid != null">
+        FromId,
+      </if>
+      <if test="toid != null">
+        ToId,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="column5 != null">
+        Column_5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="messageid != null">
+        #{messageid,jdbcType=INTEGER},
+      </if>
+      <if test="fromid != null">
+        #{fromid,jdbcType=INTEGER},
+      </if>
+      <if test="toid != null">
+        #{toid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=INTEGER},
+      </if>
+      <if test="column5 != null">
+        #{column5,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssdut.demo.pojo.message">
+    update message
+    <set>
+      <if test="fromid != null">
+        FromId = #{fromid,jdbcType=INTEGER},
+      </if>
+      <if test="toid != null">
+        ToId = #{toid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=INTEGER},
+      </if>
+      <if test="column5 != null">
+        Column_5 = #{column5,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssdut.demo.pojo.message">
+    update message
+    set FromId = #{fromid,jdbcType=INTEGER},
+      ToId = #{toid,jdbcType=INTEGER},
+      time = #{time,jdbcType=INTEGER},
+      Column_5 = #{column5,jdbcType=TIMESTAMP}
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.ssdut.demo.pojo.message">
+    <id column="MessageId" jdbcType="INTEGER" property="messageid" />
+    <result column="FromId" jdbcType="INTEGER" property="fromid" />
+    <result column="ToId" jdbcType="INTEGER" property="toid" />
+    <result column="time" jdbcType="INTEGER" property="time" />
+    <result column="Column_5" jdbcType="TIMESTAMP" property="column5" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MessageId, FromId, ToId, time, Column_5
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssdut.demo.pojo.message">
+    insert into message (MessageId, FromId, ToId, 
+      time, Column_5)
+    values (#{messageid,jdbcType=INTEGER}, #{fromid,jdbcType=INTEGER}, #{toid,jdbcType=INTEGER}, 
+      #{time,jdbcType=INTEGER}, #{column5,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssdut.demo.pojo.message">
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="messageid != null">
+        MessageId,
+      </if>
+      <if test="fromid != null">
+        FromId,
+      </if>
+      <if test="toid != null">
+        ToId,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="column5 != null">
+        Column_5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="messageid != null">
+        #{messageid,jdbcType=INTEGER},
+      </if>
+      <if test="fromid != null">
+        #{fromid,jdbcType=INTEGER},
+      </if>
+      <if test="toid != null">
+        #{toid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=INTEGER},
+      </if>
+      <if test="column5 != null">
+        #{column5,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssdut.demo.pojo.message">
+    update message
+    <set>
+      <if test="fromid != null">
+        FromId = #{fromid,jdbcType=INTEGER},
+      </if>
+      <if test="toid != null">
+        ToId = #{toid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=INTEGER},
+      </if>
+      <if test="column5 != null">
+        Column_5 = #{column5,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssdut.demo.pojo.message">
+    update message
+    set FromId = #{fromid,jdbcType=INTEGER},
+      ToId = #{toid,jdbcType=INTEGER},
+      time = #{time,jdbcType=INTEGER},
+      Column_5 = #{column5,jdbcType=TIMESTAMP}
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.ssdut.demo.pojo.message">
+    <id column="MessageId" jdbcType="INTEGER" property="messageid" />
+    <result column="FromId" jdbcType="INTEGER" property="fromid" />
+    <result column="ToId" jdbcType="INTEGER" property="toid" />
+    <result column="time" jdbcType="INTEGER" property="time" />
+    <result column="Column_5" jdbcType="TIMESTAMP" property="column5" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MessageId, FromId, ToId, time, Column_5
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssdut.demo.pojo.message">
+    insert into message (MessageId, FromId, ToId, 
+      time, Column_5)
+    values (#{messageid,jdbcType=INTEGER}, #{fromid,jdbcType=INTEGER}, #{toid,jdbcType=INTEGER}, 
+      #{time,jdbcType=INTEGER}, #{column5,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssdut.demo.pojo.message">
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="messageid != null">
+        MessageId,
+      </if>
+      <if test="fromid != null">
+        FromId,
+      </if>
+      <if test="toid != null">
+        ToId,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="column5 != null">
+        Column_5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="messageid != null">
+        #{messageid,jdbcType=INTEGER},
+      </if>
+      <if test="fromid != null">
+        #{fromid,jdbcType=INTEGER},
+      </if>
+      <if test="toid != null">
+        #{toid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=INTEGER},
+      </if>
+      <if test="column5 != null">
+        #{column5,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssdut.demo.pojo.message">
+    update message
+    <set>
+      <if test="fromid != null">
+        FromId = #{fromid,jdbcType=INTEGER},
+      </if>
+      <if test="toid != null">
+        ToId = #{toid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=INTEGER},
+      </if>
+      <if test="column5 != null">
+        Column_5 = #{column5,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssdut.demo.pojo.message">
+    update message
+    set FromId = #{fromid,jdbcType=INTEGER},
+      ToId = #{toid,jdbcType=INTEGER},
+      time = #{time,jdbcType=INTEGER},
+      Column_5 = #{column5,jdbcType=TIMESTAMP}
+    where MessageId = #{messageid,jdbcType=INTEGER}
+  </update>
+</mapper>

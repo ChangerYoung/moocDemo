@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssdut.demo.dao.user_infoMapper" >
+  <resultMap id="BaseResultMap" type="com.ssdut.demo.pojo.user_info" >
+    <id column="UserId" property="userid" jdbcType="INTEGER" />
+    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="UserPwd" property="userpwd" jdbcType="VARCHAR" />
+    <result column="UserType" property="usertype" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    UserId, UserName, UserPwd, UserType
+  </sql>
+  <select id="getAllUsers" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from user_info
+</select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_info
+    where UserId = #{userid,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	select
+  	<include refid="Base_Column_List" />
+  	from user_info
+    where UserName = #{username,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_info
+    where UserId = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssdut.demo.pojo.user_info" >
+    insert into user_info (UserId, UserName, UserPwd, 
+      UserType)
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, 
+      #{usertype,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssdut.demo.pojo.user_info" >
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        UserId,
+      </if>
+      <if test="username != null" >
+        UserName,
+      </if>
+      <if test="userpwd != null" >
+        UserPwd,
+      </if>
+      <if test="usertype != null" >
+        UserType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        #{usertype,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssdut.demo.pojo.user_info" >
+    update user_info
+    <set >
+      <if test="username != null" >
+        UserName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        UserPwd = #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        UserType = #{usertype,jdbcType=INTEGER},
+      </if>
+    </set>
+    where UserId = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssdut.demo.pojo.user_info" >
+    update user_info
+    set UserName = #{username,jdbcType=VARCHAR},
+      UserPwd = #{userpwd,jdbcType=VARCHAR},
+      UserType = #{usertype,jdbcType=INTEGER}
+    where UserId = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>
